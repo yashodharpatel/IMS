@@ -1,0 +1,55 @@
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 2%;
+}
+
+.admin-container h3{
+  font-size: 20px;
+  color: #f7f7f7;
+}
+
+.filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.radio-buttons {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.custom-radio input {
+  display: none;
+}
+
+.radio-text {
+  padding: 8px 15px;
+  width: max-content;
+  height: max-content;
+  border: 3px solid transparent;
+  display: inline-block;
+  border-radius: 10px;
+  position: relative;
+  border: 1px solid gray;
+  text-align: center;
+  cursor: pointer;
+}
+
+.radio-text {
+  color: #f7f7f7;
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.custom-radio input:checked + .radio-text {
+  border: 3px solid #5ce1e6;
+  color: #33bbcf;
+  box-shadow: 0 0 10px #c3c3c367;
+}
