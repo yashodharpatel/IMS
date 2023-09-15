@@ -48,11 +48,11 @@ export async function POST(request: NextRequest) {
         console.log(savedUser);
 
         // send verification email
-        // try{
-        //     await sendEmail({email, emailType: EmailTypes.VERIFY, userId: savedUser._id})
-        // } catch (e) {
-        //     console.log(e);
-        // }
+        try{
+            await sendEmail({email, emailType: EmailTypes.VERIFY})
+        } catch (e) {
+            console.log(e);
+        }
 
         return NextResponse.json({
             message: "User created successfully",

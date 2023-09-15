@@ -3,10 +3,10 @@ import bcryptjs from "bcryptjs";
 import User from "@/models/userModel";
 import {EmailTypes} from "@/enums/emailTypes";
 
-export const sendEmail = async ({email, emailType, userId}:any) => {
+export const sendEmail = async ({email, emailType}:any) => {
     try {
         // generate the hashed token
-        const hashedToken = await bcryptjs.hash(userId.toString(), 10);
+        const hashedToken = await bcryptjs.hash(email.toString(), 10);
         
         if (emailType === EmailTypes.VERIFY) {
             await User.findByIdAndUpdate(email, {
@@ -15,7 +15,7 @@ export const sendEmail = async ({email, emailType, userId}:any) => {
                 verifyTokenExpiry: Date.now() + 43200000
             })
         } else if (emailType === EmailTypes.RESET) {
-            await User.findByIdAndUpdate(userId, {
+            await User.findByIdAndUpdate(email, {
                 forgotPasswordToken: hashedToken,
                 forgotPasswordTokenExpiry: Date.now() + 43200000,
 

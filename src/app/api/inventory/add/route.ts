@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({
             message: "Inventory created successfully",
             success: true,
-            savedUser
+            savedInventory
         });
 
     } catch (error: any) {
