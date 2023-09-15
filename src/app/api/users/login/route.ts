@@ -47,6 +47,8 @@ export async function POST(request: NextRequest) {
             httpOnly: true
         });
 
+        // console.log(token);
+
         return response;
 
     } catch (error: any) {

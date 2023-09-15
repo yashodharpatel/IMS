@@ -12,8 +12,6 @@ export async function POST(request: NextRequest) {
         const reqBody = await request.json();
         const {college, email, password, contact, city, role} = reqBody;
 
-        // console.log(reqBody);
-
         // validate the email
         const validateEmail = new RegExp(/^[A-Za-z0-9_!#$%&'*+\/=?`{|}~^.-]+@[A-Za-z0-9.-]+$/, "gm");
         if(!validateEmail.test(email)) {
@@ -50,11 +48,11 @@ export async function POST(request: NextRequest) {
         console.log(savedUser);
 
         // send verification email
-        try{
-            await sendEmail({email, emailType: EmailTypes.VERIFY, userId: savedUser._id})
-        } catch (e) {
-            console.log(e);
-        }
+        // try{
+        //     await sendEmail({email, emailType: EmailTypes.VERIFY, userId: savedUser._id})
+        // } catch (e) {
+        //     console.log(e);
+        // }
 
         return NextResponse.json({
             message: "User created successfully",

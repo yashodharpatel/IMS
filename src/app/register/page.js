@@ -14,8 +14,18 @@ const Register = () => {
     role: "",
   });
 
-  const handleSubmit = () => {
-    console.log(user);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      
+      const response = await axios.post("/api/users/signup", user);
+      // toast.success(response?.data?.message);
+      console.log(response.data);
+      // router.push("/login");
+  } catch (error) {
+      // toast.error(error?.response?.data?.message);
+      console.log(error?.response);
+  } 
   };
 
   const handleChange = (e) => {
