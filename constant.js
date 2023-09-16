@@ -1,4 +1,4 @@
-export const webname = "TrakKit";
+export const webname = "TrackIT";
 
 export const inventoryColumns = [
   { col1: "Tracking ID" },

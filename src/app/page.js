@@ -107,7 +107,7 @@ export default function Home() {
       <section>
         <div class="w-10/12 max-w-[1080px]  mx-auto relative pt-4 ">
           <h2 class="font-mullish text-center text-2xl leading-[1.2 font-bold mt-10">
-            Sailent Features Of TrakKitt
+            Silent Features Of TrackIT
           </h2>
           <div class="w-6 h-1 bg-greenLight mx-auto mt-5 mb-6"></div>
         </div>
