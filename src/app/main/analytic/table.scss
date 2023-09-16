@@ -1,5 +1,8 @@
 .table {
-  background: #e7e5e5;
+  background: transparent;
+  -webkit-box-shadow: 2px 4px 10px 1px rgba(0, 0, 0, 0.47);
+  box-shadow: 2px 4px 6px 1px rgba(167, 166, 166, 0.54);
+  border-radius: 10px;
     .cellWrapper {
       display: flex;
       align-items: center;

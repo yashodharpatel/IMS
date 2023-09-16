@@ -1,6 +1,7 @@
 "use client"
 import React, { useEffect, useState } from "react";
 import Table from "../analytic/Table";
+import { inventoryColumns } from "../../../../constant";
 import "./inventory.css";
 import axios  from "axios";
 
@@ -51,7 +52,7 @@ const AdminTable = () => {
         </label>
       </div>
       <div>
-        <Table />
+        <Table item={inventoryColumns}/>
       </div>
     </div>
   );

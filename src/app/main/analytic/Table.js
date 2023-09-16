@@ -62,7 +62,7 @@ const List = ({item}) => {
   // console.log(inventoryColumns);
   return (
     <TableContainer component={Paper} className="table">
-      <Table sx={{ minWidth: 650, color: "#f8f8f8" }} aria-label="simple table">
+      <Table sx={{ minWidth: 650}} aria-label="simple table">
         <TableHead>
           <TableRow>
             <TableCell className="tableCell">{item[0].col1}</TableCell>
