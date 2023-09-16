@@ -3,8 +3,11 @@ import React, { useEffect, useState } from "react";
 import "./register.scss";
 import axios from "axios";
 import Select from "react-select";
+import {useRouter} from "next/navigation";
+import {toast} from "react-hot-toast";
 
 const Register = () => {
+  const router = useRouter();
   const [user, setUser] = useState({
     college: "",
     email: "",
@@ -14,18 +17,21 @@ const Register = () => {
     role: "",
   });
 
+  const[loading, setLoading] = useState(false);
+
   const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
     try {
-      
       const response = await axios.post("/api/users/signup", user);
-      // toast.success(response?.data?.message);
+      toast.success(response?.data?.message);
       console.log(response.data);
       router.push("/login");
   } catch (error) {
-      // toast.error(error?.response?.data?.message);
+      toast.error(error?.response?.data?.message);
       console.log(error?.response);
-  } 
+  }
+  setLoading(false);
   };
 
   const handleChange = (e) => {
@@ -51,6 +57,7 @@ const Register = () => {
 
   return (
     <div className="register-container">
+      {loading ? "Loading...":
       <div className="register bg-discount-gradient">
         <h1>
           Unlock Your Account
@@ -172,7 +179,7 @@ const Register = () => {
             Register
           </button>
         </form>
-      </div>
+      </div>}
     </div>
   );
 };
