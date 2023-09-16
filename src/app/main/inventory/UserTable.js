@@ -1,10 +1,10 @@
 import React from 'react'
-import '../analytic/Table'
+import Table from "../analytic/Table";
 
 const UserTable = () => {
   return (
     <div className='rightbar'>
-        <Table/>
+        <Table />
     </div>
   )
 }

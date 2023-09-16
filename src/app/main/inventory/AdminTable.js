@@ -1,8 +1,26 @@
-import React from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import Table from "../analytic/Table";
 import "./inventory.css";
+import axios  from "axios";
 
 const AdminTable = () => {
+
+    const [data, setData] = useState([]);
+
+    // useEffect(() => {
+    //     const getData = async () =>{
+    //         try {
+    //             const res = await axios.get("/api/inventory/inventories");
+    //             console.log(res);
+    //             // setData(res);
+    //         } catch (error) {
+    //             console.log(error);
+    //         }
+    //     }
+    //     getData();
+    // }, [data])
+    
   return (
     <div className="admin-container">
       <div className="filters">
