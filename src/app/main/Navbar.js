@@ -1,6 +1,7 @@
 import React from "react";
 import "./style.css";
 import { webname } from "../../../constant";
+import Link from "next/link";
 
 const Navbar = () => {
   // const name = useSelector((state)=>state.user.name)
@@ -9,7 +10,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="navbarWrapper">
         <div className="navbarLeft">
-          <span className="logo">{webname}</span>
+          <Link href="/"><span className="logo" style={{cursor:"pointer"}}>{webname}</span></Link>
         </div>
         <div className="navbarCenter">
           <div className="search">
